@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Мамутов Алим - Урок 1</title>
+	<script type="text/javascript">
+		
+		function readInt(){
+			var number = document.getElementById("symbolsCount").value;
+			if (isNaN(parseFloat(number))) {
+				number = 0;
+			}
+			return parseFloat (number);
+		}
+
+
+		function convert() {
+			tC = readInt();
+			var tF = ((9 / 5) * tC + 32)
+			alert("Градусы по Фаренгейту: "+tF);
+		}
+
+	</script>
+
+</head>
+
+<body>
+	Задание 1
+	<div class="content"> 
+		
+		<div class="contentWrap">
+			<div class = "content">
+				<div class = "center">
+
+					<h1>Конвертация температуры</h1>
+
+					<div class = "box">
+						<p id='info'>Введите градусы по цельсию:</p>
+						<input type="text" id ="symbolsCount">
+						<br>
+						<p><a href="#" onclick="convert();" id="button">Конвертировать</a></p>
+						<br><br><br>
+					</div>
+
+				</div>
+			</div>
+		</div>	
+		
+	</div>
+	
+</body>
+
+</html>
