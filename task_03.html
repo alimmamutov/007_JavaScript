@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мамутов Алим - урок 3</title>
+</head>
+
+<body>
+    Задание 3
+    <script>
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+        products.forEach(function callback(currentValue) {
+            currentValue.price = currentValue.price * 0.85;
+            console.log(currentValue.price);
+        })
+    </script>
+</body>
+
+</html>

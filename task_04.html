@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мамутов Алим - урок 3</title>
+</head>
+
+<body>
+    Задание 4
+    <script>
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                    "1.jpg",
+                    "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78,
+            },
+        ];
+
+        // Выбираем только тех, у кого есть фотографии
+        let result = products.filter(function callbackFn(element) {
+            if (element.photos === undefined) {
+                return false;
+            }
+            else {
+                return element.photos.length > 0 ? true : false;
+            }
+        })
+        console.log(result);
+
+        // Сортировка по ценам
+        result = products.sort(function (a, b) {
+            if (a.price > b.price) {
+                return 1;
+            }
+            if (a.price < b.price) {
+                return -1;
+            }
+            return 0;
+        });
+        console.log(result);
+    </script>
+</body>
+
+</html>
