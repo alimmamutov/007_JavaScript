@@ -8,4 +8,3 @@ if (test){
 else{
     alert('No data');
 }
-
