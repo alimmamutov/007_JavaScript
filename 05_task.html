@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мамутов Алим - 2 урок</title>
+</head>
+
+<body>
+    5 Задание
+    <script>
+        // 5 Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        // где arg1, arg2 – значения аргументов, operation – строка с названием операции.В зависимости от
+        // переданного значения операции(использовать switch) выполнить одну из арифметических операций
+        // (использовать функции из задания 4) и вернуть полученное значение.
+        function sum(a, b){
+            return a + b;
+        }
+        function difference(a, b){
+            return a - b;
+        }
+        function product_of_numbers(a, b){
+            return a * b;    
+        }
+        function division_of_numbers(a, b){
+            return a / b;
+        }
+        function perform_an_operation(a, b, operation){
+            switch (operation){
+                case 'sum':
+                    return sum(a, b);
+                case 'dif':
+                    return difference(a,b);
+                case 'prod':
+                    return product_of_numbers(a,b);
+                case 'div':
+                    return division_of_numbers(a,b);
+                default:
+                    return 'Операция не распознана';
+            }
+        }
+        
+        let a = 12, b = 4;
+        console.log(perform_an_operation(a,b,'sum'));
+        console.log(perform_an_operation(a,b,'dif'));
+        console.log(perform_an_operation(a,b,'prod'));
+        console.log(perform_an_operation(a,b,'div'));
+        console.log(perform_an_operation(a,b,'unnkown_op'));
+    </script>
+</body>
+
+</html>
