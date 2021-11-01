@@ -35,6 +35,25 @@
         myProd.showInfo();
         myProd.make25PercentDiscount();
         myProd.showInfo();
+
+        // ES 6
+        class ProductClass{
+            constructor(name, price){
+                this.name = name;
+                this.price = price;
+            }
+            make25PercentDiscount(){
+                this.price = this.price * 0.75;    
+            }
+            showInfo() {
+            console.log(''+this.name + ' ' + this.price);
+            }
+        }
+
+        myProdClass = new ProductClass('Фортепиано Roland', 108000);
+        myProdClass.showInfo();
+        myProdClass.make25PercentDiscount();
+        myProdClass.showInfo();
     </script>
 </body>
 
