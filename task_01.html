@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мамутов Алим - урок 4</title>
+</head>
+
+<body>
+    Задание 1
+    <script>
+        // (это задание делайте по желанию) Написать функцию, преобразующую число в объект.Передавая на
+        // вход число в диапазоне[0, 999],
+        // мы должны получить на выходе объект, в котором в соответствующих свойствах описаны разряды числа:
+        // - единицы(в свойстве units)
+        // - десятки(в свойстве tens)
+        // - сотни(в свойстве hundereds)
+        // Например, для числа 45 мы должны получить следующий объект:
+        // {
+        // units: 5, //это единицы
+        // tens: 4, //это десятки
+        // hundreds: 0, //это сотни
+        // }
+        //  Если число было передано вне[0, 999] диапазона, не целое число или вообще не число,
+        //  необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+        //  Вам может пригодиться: 
+        //  Number.isInteger(value) – функция проверяет, является ли переданное число целым, подробнее здесь
+        //  https://mzl.la/2XCVSsx
+        //  Math.floor(value) - метод возвращает целое число, которое меньше или равно данному числу(проще
+        //  говоря округляет в меньшую сторону), подробнее здесь https://mzl.la/2Qx42SO .
+        //  Используйте также остаток от деления на 10, например 123 % 10 будет 3
+        //  Вам также может пригодится делить число на 100 и на 10
+        
+        class MyNumberObject{
+            constructor(hundreds, dozens, units){
+                this.hundreds = hundreds;
+                this.dozens = dozens;
+                this.units = units;
+            }
+        }
+
+        function generateObj(myNumber){
+            if (Number.isInteger (myNumber) == false){
+                console.log('Введенное значение не является целым числом числом');
+                return NaN;
+            }
+            else if (myNumber <0 | myNumber > 999){
+                console.log('Введенное число не входит в диапазон [0 ; 999]');
+                return NaN;
+            }
+            let hundreds = Math.floor(myNumber/100);
+            myNumber = myNumber % 100;
+            let dozens = Math.floor(myNumber/10);
+            myNumber = myNumber % 10;
+            let units = Math.floor(myNumber);
+            let returnedObject = new MyNumberObject(hundreds, dozens, units);
+            return returnedObject;
+        }
+    </script>
+</body>
+
+</html>
