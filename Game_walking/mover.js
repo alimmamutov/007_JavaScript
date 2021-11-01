@@ -4,14 +4,14 @@ let mover = {
      * @returns {int} возвращаем направление, введенное пользователем
      */
     getDirection(){
-        const availableDirections = [2, 4, 6, 8];
+        const availableDirections = [1, 2, 3, 4, 6, 7, 8, 9];
         while (true){
-            let direction = parseInt(prompt('Введите число 2, 4, 6 или 8, куда вы хотите переместиться, "Отмена" для выхода.'));
+            let direction = parseInt(prompt('Введите число 1, 2, 3, 4, 6, 7, 8 или 9, куда вы хотите переместиться, "Отмена" для выхода.'));
             if (isNaN(direction)){
                 return null;
             }
             if (!availableDirections.includes(direction)){
-                alert('Для перемещения необходимо ввести одно из чисел 2, 4, 6 или 8.');
+                alert('Для перемещения необходимо ввести одно из чисел 1, 2, 3, 4, 6, 7, 8 или 9.');
                 continue;
             }
             return direction;
@@ -23,10 +23,17 @@ let mover = {
      * @returns {{x:int, y:int}} следующая позиция игрока 
      */
     getNextPosition(direction){
+        
         const nextPosition = {
             x: player.x,
-            y: player.y
+            y: player.y,
+            cancel: false
         };
+
+        const lastPosition = {}; // Создаю объект для хранения предыдущей позиции,
+
+        Object.assign(lastPosition, nextPosition);
+
         switch(direction){
             case 2:{
                 nextPosition.y++;
@@ -44,7 +51,32 @@ let mover = {
                 nextPosition.y--;
                 break;
             }
-            return nextPosition;
+            case 1:{
+                nextPosition.y++;
+                nextPosition.x--;
+                break;
+            }
+            case 3:{
+                nextPosition.y++;
+                nextPosition.x++;
+                break;
+            }
+            case 7:{
+                nextPosition.y--;
+                nextPosition.x--;
+                break;
+            }
+            case 9:{
+                nextPosition.y--;
+                nextPosition.x++;
+                break;
+            }
         }
+        if (nextPosition.x >9 | nextPosition.x < 0 | nextPosition.y > 9 |nextPosition.y < 0) {
+            Object.assign(nextPosition, lastPosition);
+            nextPosition.cancel = true;
+            console.log('Вы упёрлись в стену!');
+        }
+        return nextPosition;
     }
 };
