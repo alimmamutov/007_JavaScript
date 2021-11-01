@@ -1,2 +1,7 @@
-const rowsCount = 10;
-const colsCount = 10;
+/**
+ * Объект с настройками игры
+ */
+const config = {
+    rowsCount: 10,
+    colsCount: 10
+};
