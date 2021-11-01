@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мамутов Алим - урок 4</title>
+</head>
+
+<body>
+    Задание 1.2
+    <script>
+    // 1.2
+    // (это обязательное задание) Сделайте в стиле es5, а затем в стиле es6 (по аналогии из дополнительных
+    // видео -> 3 примеры наследования -> механика наследования),
+    // а) конструктор Post, который принимает параметры author, text, date и сохраняет их как свойства объекта. Объекты
+    // типа Post должны иметь метод edit, который будет принимать текст и записывать его в свойство text объекта.
+    // б) конструктор AttachedPost, который принимает параметры author, text, date. Проинициализируйте эти свойства с
+    // помощью конструктора Post, чтобы не дублировать код. Также в конструкторе AttachedPost должно создаваться
+    // свойство highlighted со значением false. Унаследуйте в объектах типа AttachedPost методы из Post.
+    // Объекты типа AttachedPost должны иметь метод makeTextHighlighted, который будет назначать свойству
+    // highlighted значение true.
+
+
+    // ES 5
+    function Post(author, text, date){
+        this.author = author;
+        this.text = text;
+        this.date = date;
+    }
+    Post.prototype.edit = function(newText){
+        this.text = newText;
+    }
+
+    function AttachedPost(author, text, date){
+        Post.call(this, author, text, date);
+        this.highlighted = false;
+    }
+
+    AttachedPost.prototype = Object.create(Post.prototype); // Создаем свой личный прототип для данной сущности 
+    AttachedPost.prototype.constructor = AttachedPost; // Возвращаем на место конструктор руками, т.к. он затерся с созданием прототипа
+
+    AttachedPost.prototype.makeTextHighlighted = function(){ // Добавляем собственный метод новой сущности
+        this.highlighted = true;
+    }
+
+    myPost = new Post('Alim', 'some text', '25/12/2019');
+    myAttachedPost = new AttachedPost('Anna', 'Anna s text', '01/11/2021');
+    
+    // ES 6
+    class PostClass{
+        constructor(author, text, date){
+            this.author = author;
+            this.text = text;
+            this.date = date;    
+        }
+        edit(newText){
+        this.text = newText;
+        }
+    }
+    class AttachedPostClass extends PostClass{
+        constructor(author, text, date){
+            super(author, text, date);
+            this.highlighted = false;   
+        }
+        makeTextHighlighted(){
+            this.highlighted = true
+        }
+    }
+    myPostClass = new PostClass('Alim', 'some text', '25/12/2019');
+    myAttachedPostClass = new AttachedPostClass('Anna', 'Anna s text', '01/11/2021');
+    </script>
+
+    
+</body>
+
+</html>
