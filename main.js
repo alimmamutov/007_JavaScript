@@ -1,9 +1,9 @@
 'use strict'
 
 let test = document.getElementById('one'); // нашли элемент по ид
-console.log(test.innerText) // Вывод только видимого текста
-console.log(test.textContent) // Вывод всего текста, включая скрытый
-console.log(test.textContent.trim()) // Вывод всего текста, включая скрытый,обрезая лишнее слева и справа
+// console.log(test.innerText) // Вывод только видимого текста
+// console.log(test.textContent) // Вывод всего текста, включая скрытый
+// console.log(test.textContent.trim()) // Вывод всего текста, включая скрытый,обрезая лишнее слева и справа
 
 let test2 = document.getElementsByTagName('p'); // Находим все элементы по данному тэгу
 let test3 = document.querySelector('p');// Возвращает первое вхождение элемента
@@ -25,4 +25,12 @@ let test8 = document.querySelectorAll('.wrap span'); // Вывели все эл
 let test9 = document.querySelector('.wrap'); // Выводим первый элемент класса wrap c типом span
 // console.dir(test9.childNodes);  // Выводим подчиненный nodelist узлы
 // console.dir(test9.children);    // Выводим подчиненный HTML collection только тэги
+
+let strong = document.createElement('strong'); // Создаю элемент
+strong.innerText = 'Я новый тэг';
+console.dir(strong);
+
+let wrap = document.querySelector('.wrap')
+wrap.insertAdjacentHTML('beforebegin', strong.outerHTML); // Вставляю элемент перед классом wrap
+// document.body.insertBefore(strong, document.querySelector('.wrap')); // Вставляю элемент перед клссом wrap
 
