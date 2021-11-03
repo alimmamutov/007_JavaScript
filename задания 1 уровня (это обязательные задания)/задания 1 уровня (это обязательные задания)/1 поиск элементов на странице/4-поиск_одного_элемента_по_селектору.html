@@ -28,7 +28,8 @@
     aria-valuenow="50" и выведите его в консоль. -->
 
     <script>
-
+      let foundDiv = document.querySelector('div [aria-valuenow="50"]'); // нахожу только тэг div с атрибутом
+      console.dir(foundDiv); // Вывожу как объект
     </script>
 </body>
 
