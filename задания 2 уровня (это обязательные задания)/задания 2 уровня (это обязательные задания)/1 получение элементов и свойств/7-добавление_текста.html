@@ -16,7 +16,13 @@
     2. Проверьте, есть ли в ссылке текст "ссылка", и если нет, то добавьте. -->
 
     <script>
-        
+    let href = document.links
+    for ( i=0; i < href.length; i++ ){
+        if (!href[i].innerText.includes('ссылка')){
+            href[i].innerText += 'ссылка';
+        }
+        console.log(href[i]);
+    }  
     </script>
 </body>
 </html>

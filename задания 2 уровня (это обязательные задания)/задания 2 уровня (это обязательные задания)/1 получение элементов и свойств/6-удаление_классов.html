@@ -22,6 +22,22 @@
     <!-- Задание.
     1. Найдите все "карточки" с классом .card.
     2. Проверьте есть ли у карточки класс hidden с помощью метода contains(),
-    и если есть, то удалите с помощью метода remove(). -->
+    и если есть, то удалите с помощью метода remove(). --> 
 </body>
+<script>
+    let cardsClass = document.getElementsByClassName('card');
+    console.log("Элементы до удаления классов:");
+    for (let item of cardsClass) {
+          console.log(item.outerHTML);
+        }  
+    console.log(); 
+    console.log("Элементы после удаления классов:");
+    for (let item of cardsClass) {
+          if(item.classList.contains('hidden')){
+              item.classList.remove('hidden');
+          }
+          console.log(item.outerHTML);
+        }
+
+</script>
 </html>

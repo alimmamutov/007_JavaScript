@@ -14,6 +14,19 @@
     из элементов. -->
 
     <script>
+        function editFontSize(elem, fontSize){
+            elem.style.fontSize = ''+fontSize+'px';
+        }
+
+        function setGreenBack(elem){
+            elem.style.background = 'green';
+        }
+        
+        let button = document.querySelector('button');
+        let textarea = document.querySelector('textarea');
+
+        editFontSize(button, 30);
+        setGreenBack(textarea);
         
     </script>
 </body>

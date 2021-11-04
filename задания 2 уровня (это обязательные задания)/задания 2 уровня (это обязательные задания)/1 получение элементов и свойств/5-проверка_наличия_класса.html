@@ -14,4 +14,11 @@
     проверьте есть ли класс hidden у этого тега.
      -->
 </body>
+<script>
+    let div = document.querySelector('div');
+    let classes = div.classList, className = 'hidden';
+    console.log('искомый тэг '
+    + (classes.contains(className)?'содержит':'не содержит') 
+    + ' класс ' + className );
+</script>
 </html>

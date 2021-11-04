@@ -23,4 +23,10 @@
     чтобы где класс green есть, его не стало, а где нету, чтобы появился.
     -->
 </body>
+<script>
+    let tagList = document.querySelectorAll('i');
+    tagList.forEach(function(elem){
+        elem.classList.toggle('green');
+    });
+</script>
 </html>
