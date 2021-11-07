@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea>Lorem ipsum dolor sit amet.</textarea>
+    <script>
+        'use strict';
+        document.addEventListener('cut', function(event){
+            const selection = document.getSelection(); // получить выделение
+            event.clipboardData.setData('text/plain', selection.toString().toUpperCase()); // Поместить в буфер в верхнем регистре
+            selection.deleteFromDocument(); // После вырезания удалить выделенный текст
+            event.preventDefault(); // Убрать стандатную обработку браузера
+        });
+    </script>
+</body>
+</html>

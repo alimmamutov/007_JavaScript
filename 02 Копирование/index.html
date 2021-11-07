@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Lorem ipsum dolor sit amet.
+    <br>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <script>
+        'use strict';
+        document.addEventListener('copy', function(event){
+            const selection = document.getSelection().toString();
+            event.clipboardData.setData('text/plain', selection + ' Этот текст скопирован с сайта #'); // Меняем буфер
+            event.preventDefault(); // СтандартнаяОбработка - Ложь
+        })
+    </script>
+</body>
+</html>
