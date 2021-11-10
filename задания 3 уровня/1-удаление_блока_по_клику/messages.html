@@ -46,8 +46,16 @@
     <script>
 
         function closeClickHandler(event) {
-           
+           button = event.currentTarget;
+           //console.dir(button);
+           button.parentElement.style.display = 'none';
         }
+
+        let buttonCollection = document.querySelectorAll('button','.close');
+        buttonCollection.forEach(function(button){
+            //console.dir(button);
+            button.addEventListener('click', closeClickHandler);
+        });
     </script>
 </body>
 

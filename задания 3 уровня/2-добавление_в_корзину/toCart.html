@@ -44,8 +44,16 @@
         
 		
 		function buttonClickHandler(event) {
-		
+            button = event.target;
+            button.parentNode.style.background = 'lightgreen';
+            button.innerText = 'Добавлено';
 		}
+
+        let buttonCollection = document.querySelectorAll('button');
+       
+        buttonCollection.forEach(function(button){
+            button.addEventListener('click', buttonClickHandler);
+        });
     </script>
 </body>
 </html>
