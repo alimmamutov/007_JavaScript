@@ -27,7 +27,11 @@
     -->
 
     <script>
-        
+        let goToTopEl = document.querySelector('#goToTop');
+        window.addEventListener('scroll',function(){
+            if(window.pageYOffset>=500){ goToTopEl.style.display = 'block';}
+            else{goToTopEl.style.display = 'none';}
+        })
     </script>
 </body>
 </html>

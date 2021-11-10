@@ -36,7 +36,27 @@
      -->
 
     <script>
-        
+        let formEl = document.querySelector('form');
+        let inputF = document.querySelector('#first');
+        let inputS = document.querySelector('#second');
+        formEl.addEventListener('submit', function(event){
+            
+            let cancel = false;
+            
+            if (inputF.value == ''){
+                cancel = true;
+                inputF.style.borderColor = 'red';
+            } 
+            
+            if (inputS.value == ''){
+                cancel = true;
+                inputS.style.borderColor = 'red';
+            } 
+
+            if (cancel) {
+                event.preventDefault();
+            }
+        });   
     </script>
 </body>
 </html>
