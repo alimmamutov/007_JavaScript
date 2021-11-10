@@ -23,10 +23,19 @@
             параметр input
             2.2 Чтобы менять стили обращайтесь к свойству style у параметра input
     -->
+   
 
-    <script>
-        
-    </script>
 </body>
+<script>
+    window.addEventListener('load', function (event) {
+        let marginBottom = +prompt('Введите величину отступа (em)', '1')
+        let inputCollection = document.querySelectorAll('input');
+        inputCollection.forEach(function (input) {
+            console.dir(input);
+            input.style.marginBottom = marginBottom + 'em';
+        });
+    });
+
+</script>
 
 </html>
