@@ -44,29 +44,7 @@
 
         let goldenClass = 'golden';
 
-        firstStar.addEventListener('mouseover', function () {
-            if (!firstStar.classList.contains(goldenClass)) {
-                firstStar.classList.add(goldenClass);
-            }
-        });
-
-        firstStar.addEventListener('mouseout', function () {
-            firstStar.classList.remove(goldenClass);
-        });
-
-        secondStar.addEventListener('mouseover', function () {
-            if (!firstStar.classList.contains(goldenClass)) {
-                firstStar.classList.add(goldenClass);
-            }
-            secondStar.classList.toggle('golden');
-        });
-
-        secondStar.addEventListener('mouseout', function () {
-            firstStar.classList.toggle(goldenClass);
-            secondStar.classList.toggle('golden');
-        });
-
-        thirdStar.addEventListener('mouseover', function (event) {
+        function setStars(event){
             let currentStar = event.target;
             currentStar.classList.toggle('golden');
             while (true) {
@@ -74,15 +52,19 @@
                 if (prevNode == null) { break; }
                 else 
                 { 
+                    prevNode.classList.toggle('golden');
                     currentStar = prevNode;
                     console.dir(prevNode);
                 }
             }
-        });
-
-        // thirdStar.addEventListener('mouseout', function () {
-
-        // });
+        }
+       
+        // вот здесь надо мною гордиться ))))))
+        let starsCollection = document.querySelectorAll('.fas', '.fa-star');
+        starsCollection.forEach(function(starItem){
+            starItem.addEventListener('mouseover', setStars);
+            starItem.addEventListener('mouseout', setStars);
+        })
 
     </script>
 </body>
