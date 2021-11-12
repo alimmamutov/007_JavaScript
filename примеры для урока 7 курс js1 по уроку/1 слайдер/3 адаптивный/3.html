@@ -48,14 +48,14 @@
         let mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
             loop: true,
-            slidesPerView: 1,
+            slidesPerView: 1, // По умолчанию слайдов на странице 1
             spaceBetween: 20,
 
-            breakpoints: {
-                800: {
+            breakpoints: { // Условия, при которых меняются свойства
+                800: { // При ширине 800 - слайдов 2
                     slidesPerView: 2,
                 },
-                1300: {
+                1300: { // При ширине 1300 - слайдов 3
                     slidesPerView: 3,
                 },
             },

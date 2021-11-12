@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../packages/swiper-5.4.5/package/css/swiper.min.css">
+    <!-- // Подключение css библиотеки из соседней папки -->
+    <link rel="stylesheet" href="../packages/swiper-5.4.5/package/css/swiper.min.css"> 
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -43,13 +44,16 @@
 
     </div>
 
-    <script src="../packages/swiper-5.4.5/package/js/swiper.min.js"></script>
+    <!-- // подключение библиотеки js -->
+    <script src="../packages/swiper-5.4.5/package/js/swiper.min.js"></script> 
 
     <script>
         'use strict';
         let mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
             loop: true,
+            effect: 'cube',
+            direction: 'horizontal',
 
             // If we need pagination
             pagination: {

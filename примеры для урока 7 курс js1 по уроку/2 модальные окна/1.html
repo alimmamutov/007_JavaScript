@@ -22,19 +22,19 @@
         'use strict';
         let buttonEl = document.querySelector('button');
         buttonEl.addEventListener('click', function () {
-            Swal.fire({
-                title: 'Заголовок!',
-                text: 'Текст',
-                icon: 'info',
-                confirmButtonText: 'Ok'
-            });
-
             // Swal.fire({
-            //     icon: 'error',
-            //     title: 'Oops...',
-            //     text: 'Something went wrong!',
-            //     footer: '<a href="#" target="_blank">Why do I have this issue?</a>'
+            //     title: 'Заголовок!',
+            //     text: 'Текст',
+            //     icon: 'info',
+            //     confirmButtonText: 'Ok'
             // });
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="#" target="_blank">Why do I have this issue?</a>'
+            });
 
             // Swal.fire({
             //     title: '<strong>HTML <u>example</u></strong>',
