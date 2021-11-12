@@ -20,7 +20,13 @@
     -->
 
     <script>
-        
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(function(buttonElement){
+            console.log(buttonElement);
+            for (key in buttonElement.dataset){
+                console.log(key + ': ' + buttonElement.dataset[key]);
+            }
+        });    
     </script>
 </body>
 </html>
