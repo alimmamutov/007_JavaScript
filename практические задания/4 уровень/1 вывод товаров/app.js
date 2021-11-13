@@ -75,6 +75,11 @@ const products = {
     ],
 };
 
+let buttonCollection = document.querySelectorAll('button');
+let productsDiv = document.querySelector('.products');
+buttonCollection.forEach(function (button) {
+    button.addEventListener('click', clickHandler);
+});
 
 /**
  * Эта функция должна вызываться при клике по кнопкам.
@@ -82,10 +87,15 @@ const products = {
  */
 function clickHandler(event) {
     //вам нужно очищать содержимое .products
-    
+    while (productsDiv.firstChild) {
+        productsDiv.removeChild(productsDiv.firstChild);
+    }
+
     //в showCategory надо передать строку с типом категории, тип берите
     //из атрибута data-type у кнопки, по которой кликнули.
-    
+    showCategory(event.target.dataset.type);
+
+
 }
 
 /**
@@ -96,7 +106,11 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    products[category].forEach(function(item){
+        console.dir(item);
+        let newNode = getProductMarkup(item);
+        productsDiv.insertAdjacentHTML('beforeend',newNode);
+    });
 }
 
 /**
@@ -109,5 +123,12 @@ function showCategory(category) {
  * в верху этого файла.
  */
 function getProductMarkup(product) {
-
+    
+    let newNode = `<div class="product">
+    <div>${product.name}</div>
+    <img src="${product.imageUrl}" alt="">
+    <div>${product.price}</div>
+    <a href="https://example.com/producs/${product.id}">Подробнее</a>
+    </div>`;
+    return newNode;
 }
