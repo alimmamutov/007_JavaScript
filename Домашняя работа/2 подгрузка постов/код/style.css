@@ -23,3 +23,10 @@ img {
     margin-bottom: 10px;
     border-bottom: 1px solid gray;
 }
+
+.scrollCheck{
+    width: 200px;
+    height: 100px;
+    top: 130;
+    background: lightblue;
+}
